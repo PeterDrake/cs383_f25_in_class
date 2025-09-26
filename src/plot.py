@@ -14,9 +14,9 @@ def time_function(f, n):
     f(n)
     return time() - start
 
-
-for f in [#fibo_rec,
-          fibo_iter, fibo_small, fibo_formula]:
-    plt.plot(range(1, 51), [time_function(f, n) for n in range(1, 51)], label=str(f))
-plt.legend()
-plt.show()
+if __name__ == '__main__':
+    for f in [#fibo_rec,
+              fibo_iter, fibo_small, fibo_formula]:
+        plt.plot(range(1, 51), [time_function(f, n) for n in range(1, 51)], label=str(f))
+    plt.legend()
+    plt.show()
