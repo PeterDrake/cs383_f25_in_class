@@ -13,8 +13,16 @@ class Vector:
         # return '<' + str(self.x) + ', ' + str(self.y) + '>'
         return f'<{self.x}, {self.y}>'
 
-v = Vector(3, 4)
-w = Vector(10, 20)
-z = v + w
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
 
-print(z)
+    def __hash__(self):
+        return hash((self.x, self.y))
+
+a = Vector(3, 4)
+b = Vector(10, 20)
+c = Vector(10, 20)
+print(hash(a))
+print(hash(b))
+print(hash(c))
+
